@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Rich warm basketball gradient blending coral and sporty orange -->
+    <radialGradient id="ballGrad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FF9F7A" />
+      <stop offset="45%" stop-color="#FA6560" />
+      <stop offset="85%" stop-color="#DE4335" />
+      <stop offset="100%" stop-color="#B82E22" />
+    </radialGradient>
+    <!-- Subtle 3D edge shadow -->
+    <radialGradient id="innerShade" cx="50%" cy="50%" r="50%">
+      <stop offset="78%" stop-color="rgba(0,0,0,0)" />
+      <stop offset="100%" stop-color="rgba(0,0,0,0.3)" />
+    </radialGradient>
+  </defs>
+
+  <!-- Basketball sphere base -->
+  <circle cx="32" cy="32" r="29.5" fill="url(#ballGrad)" />
+  <circle cx="32" cy="32" r="29.5" fill="url(#innerShade)" />
+
+  <!-- Outer rim border for crisp contrast on dark tabs -->
+  <circle cx="32" cy="32" r="29.5" fill="none" stroke="#23120B" stroke-width="2.4" />
+
+  <!-- Basketball Black Ribs / Seams -->
+  <!-- Horizontal equator line -->
+  <line x1="2.5" y1="32" x2="61.5" y2="32" stroke="#23120B" stroke-width="2.5" stroke-linecap="round" />
+
+  <!-- Vertical meridian line -->
+  <line x1="32" y1="2.5" x2="32" y2="61.5" stroke="#23120B" stroke-width="2.5" stroke-linecap="round" />
+
+  <!-- Left curved seam -->
+  <path d="M 12 7.5 C 23.5 16.5, 23.5 47.5, 12 56.5" fill="none" stroke="#23120B" stroke-width="2.5" stroke-linecap="round" />
+
+  <!-- Right curved seam -->
+  <path d="M 52 7.5 C 40.5 16.5, 40.5 47.5, 52 56.5" fill="none" stroke="#23120B" stroke-width="2.5" stroke-linecap="round" />
+
+  <!-- Glossy specular highlight -->
+  <path d="M 15 17 A 20 20 0 0 1 34 11" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" opacity="0.5" />
+</svg>

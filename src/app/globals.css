@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800&family=Nanum+Brush+Script&family=Nanum+Pen+Script&family=Phudu:wght@500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Phudu", sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  --font-script: "Caveat", "Nanum Pen Script", cursive;
+
+  --color-teal-dark: #117789;
+  --color-teal-deep: #165662;
+  --color-teal-light: #6cacb6;
+  --color-teal-pale: #e4f1f4;
+  --color-coral: #fe7d79;
+  --color-coral-dark: #e65c56;
+  --color-coral-light: #fdafA8;
+  --color-coral-pale: #fdf1ef;
+  --color-slate-dark: #193a42;
+  --color-slate-muted: #4f747b;
+}
+
+/* Kree8-inspired soft tactile card */
+.kree8-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(108, 172, 182, 0.22);
+  box-shadow: 
+    0px 2px 6px 0px rgba(17, 119, 137, 0.05),
+    0px 14px 28px 0px rgba(25, 58, 66, 0.07),
+    0px 32px 60px -12px rgba(254, 125, 121, 0.09);
+}
+
+/* Kree8-inspired pill button */
+.kree8-pill-btn {
+  position: relative;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #fe7d79 0%, #fa6560 55%, #e6544e 100%);
+  box-shadow: 
+    0px 2px 5px 0px rgba(254, 125, 121, 0.35),
+    0px 12px 24px -4px rgba(254, 125, 121, 0.45),
+    0px 20px 36px -8px rgba(25, 58, 66, 0.2);
+}
+
+.kree8-pill-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  padding: 1.5px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.08) 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Subtle ambient backdrop canvas */
+.kree8-canvas {
+  background-color: #fbf9f6;
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(17, 119, 137, 0.12) 0px, transparent 55%),
+    radial-gradient(at 85% 25%, rgba(254, 125, 121, 0.14) 0px, transparent 60%),
+    radial-gradient(at 50% 85%, rgba(108, 172, 182, 0.10) 0px, transparent 50%);
+}
+
+/* Safe areas */
+.pt-safe {
+  padding-top: max(1rem, env(safe-area-inset-top));
+}
+
+.pb-safe {
+  padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+}
+
+/* Touch polish */
+* {
+  -webkit-tap-highlight-color: transparent;
+}

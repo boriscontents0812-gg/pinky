@@ -76,3 +76,130 @@
 * {
   -webkit-tap-highlight-color: transparent;
 }
+
+/* Hub Animations */
+@keyframes floatBubble {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatBubble 4s ease-in-out infinite;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
+@keyframes heartFlutter {
+  0%, 100% {
+    transform: scale(1) translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.22) translateY(-2px) rotate(-6deg);
+  }
+  50% {
+    transform: scale(0.98) translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: scale(1.25) translateY(-2px) rotate(6deg);
+  }
+}
+
+.animate-heart-flutter {
+  display: inline-block;
+  animation: heartFlutter 2.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes grassBreeze {
+  0%, 100% {
+    transform: scale(1.08) translateY(0px) rotate(0deg);
+  }
+  30% {
+    transform: scale(1.10) translateY(-6px) rotate(0.6deg);
+  }
+  60% {
+    transform: scale(1.08) translateY(2px) rotate(-0.4deg);
+  }
+  85% {
+    transform: scale(1.09) translateY(-3px) rotate(0.3deg);
+  }
+}
+
+.animate-grass-breeze {
+  animation: grassBreeze 7s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes floatPollen {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(0.6);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.85;
+  }
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-80px) translateX(25px) scale(1);
+    opacity: 0;
+  }
+}
+
+.animate-pollen-1 {
+  animation: floatPollen 4s ease-out infinite;
+}
+.animate-pollen-2 {
+  animation: floatPollen 5.5s ease-out infinite 1.2s;
+}
+.animate-pollen-3 {
+  animation: floatPollen 4.8s ease-out infinite 2.4s;
+}
+.animate-pollen-4 {
+  animation: floatPollen 6s ease-out infinite 0.6s;
+}
+
+@keyframes limeButtonSweep {
+  0% {
+    transform: translateX(-160%) skewX(-20deg);
+  }
+  25%, 100% {
+    transform: translateX(350%) skewX(-20deg);
+  }
+}
+
+@keyframes limeButtonPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(144, 221, 50, 0.45), 0 2px 6px rgba(39, 107, 21, 0.2);
+  }
+  50% {
+    transform: scale(1.018);
+    box-shadow: 0 8px 30px rgba(144, 221, 50, 0.75), 0 4px 12px rgba(39, 107, 21, 0.3);
+  }
+}
+
+.animate-lime-sweep {
+  animation: limeButtonSweep 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-lime-pulse {
+  animation: limeButtonPulse 2.8s ease-in-out infinite;
+}
+

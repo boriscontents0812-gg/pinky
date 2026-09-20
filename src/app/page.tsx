@@ -241,10 +241,10 @@ export default function HubPage() {
         <div className="w-full relative pt-2 pb-1 flex flex-col items-center justify-center select-none z-10">
           <div className="text-center group cursor-default">
             <span className="font-script text-[26px] sm:text-[28px] font-bold text-[#831843] tracking-wide block drop-shadow-[0_1px_4px_rgba(255,255,255,0.85)] leading-tight">
-              “Every text has a story”
+              “take your notes”
             </span>
             {/* Elegant wavy underline in soft rose */}
-            <div className="w-[130px] mx-auto mt-0.5 opacity-90">
+            <div className="w-[118px] mx-auto mt-0.5 opacity-90">
               <svg
                 viewBox="0 0 108 8"
                 fill="none"

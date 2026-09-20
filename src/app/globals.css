@@ -232,4 +232,29 @@
   animation: pinkButtonPulse 2.8s ease-in-out infinite;
 }
 
+/* Basketball Bounce & Spin Animation */
+@keyframes basketballBounceSpin {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1, 0.94);
+  }
+  30% {
+    transform: translateY(-7px) rotate(40deg) scale(0.96, 1.05);
+  }
+  55% {
+    transform: translateY(-9px) rotate(85deg) scale(1, 1);
+  }
+  80% {
+    transform: translateY(-1px) rotate(130deg) scale(1.05, 0.95);
+  }
+}
+
+.animate-basketball {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: basketballBounceSpin 1.8s cubic-bezier(0.28, 0.84, 0.42, 1) infinite;
+  transform-origin: bottom center;
+}
+
+
 

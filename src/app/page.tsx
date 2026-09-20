@@ -103,13 +103,19 @@ export default function HubPage() {
           <h1 className="font-display font-black text-[31px] sm:text-[33px] tracking-tight text-[#3b1c2b] leading-none block drop-shadow-[0_2px_10px_rgba(244,114,182,0.25)] uppercase">
             pinkyshoots
           </h1>
-          <p className="mt-1.5 text-[14px] text-[#6d3951] font-semibold tracking-tight flex items-center justify-center gap-1.5 drop-shadow-sm">
-            <span>Entertaining text stories</span>
+          <p className="mt-1.5 text-[14.5px] text-[#6d3951] font-semibold tracking-tight flex items-center justify-center gap-1.5 drop-shadow-sm select-none">
+            <span>Ion run it</span>
             <span
-              className="animate-heart-flutter select-none cursor-pointer text-[#f43f5e]"
-              title="Love text stories"
+              className="animate-basketball cursor-pointer ml-0.5"
+              title="🏀"
             >
-              💕
+              <Image
+                src="/icon.svg"
+                alt="basketball"
+                width={18}
+                height={18}
+                className="w-[18px] h-[18px] drop-shadow-sm"
+              />
             </span>
           </p>
         </div>

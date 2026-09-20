@@ -203,3 +203,33 @@
   animation: limeButtonPulse 2.8s ease-in-out infinite;
 }
 
+/* Pink Button Animations */
+@keyframes pinkButtonSweep {
+  0% {
+    transform: translateX(-160%) skewX(-20deg);
+  }
+  25%, 100% {
+    transform: translateX(350%) skewX(-20deg);
+  }
+}
+
+@keyframes pinkButtonPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 6px 24px rgba(244, 63, 94, 0.40), 0 2px 8px rgba(225, 29, 72, 0.20);
+  }
+  50% {
+    transform: scale(1.018);
+    box-shadow: 0 10px 32px rgba(244, 63, 94, 0.65), 0 4px 14px rgba(225, 29, 72, 0.30);
+  }
+}
+
+.animate-pink-sweep {
+  animation: pinkButtonSweep 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-pink-pulse {
+  animation: pinkButtonPulse 2.8s ease-in-out infinite;
+}
+
+

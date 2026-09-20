@@ -48,7 +48,7 @@ export const HubMusicPlayer: React.FC = () => {
           setIsPlaying(true);
         })
         .catch(() => {
-          // Browser prevented autoplay without interaction; stay paused
+          // Browser requires interaction first
           setIsPlaying(false);
         });
     }
@@ -159,156 +159,155 @@ export const HubMusicPlayer: React.FC = () => {
   const remainingSecs = Math.max(0, totalDuration - currentTime);
 
   return (
-    <div className="w-full max-w-[365px] mx-auto my-2.5 relative z-20 select-none font-sans">
-      {/* iOS Liquid Glass Container */}
+    <div className="w-full max-w-[365px] mx-auto my-2 relative z-20 select-none font-sans">
+      {/* Translucent Blush / Rose Quartz Glassmorphism Card */}
       <div
-        className="relative rounded-[26px] p-3.5 overflow-hidden transition-all duration-300 group"
+        className="relative rounded-[26px] p-3.5 overflow-hidden transition-all duration-300 group border border-white/85"
         style={{
           background:
-            "linear-gradient(135deg, rgba(255, 255, 255, 0.32) 0%, rgba(18, 26, 22, 0.48) 35%, rgba(10, 16, 14, 0.70) 100%)",
-          backdropFilter: "blur(30px) saturate(190%)",
-          WebkitBackdropFilter: "blur(30px) saturate(190%)",
-          border: "1px solid rgba(255, 255, 255, 0.38)",
+            "linear-gradient(135deg, rgba(255, 255, 255, 0.78) 0%, rgba(254, 242, 247, 0.72) 48%, rgba(250, 232, 255, 0.76) 100%)",
+          backdropFilter: "blur(28px) saturate(190%)",
+          WebkitBackdropFilter: "blur(28px) saturate(190%)",
           boxShadow: `
-            0 18px 40px -10px rgba(0, 0, 0, 0.42),
-            0 6px 18px rgba(0, 0, 0, 0.22),
-            inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.75),
-            inset 0 -1px 1px 0 rgba(255, 255, 255, 0.2)
+            0 16px 36px -8px rgba(244, 114, 182, 0.22),
+            0 4px 14px rgba(251, 113, 133, 0.12),
+            inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.95),
+            inset 0 -1px 1px 0 rgba(244, 114, 182, 0.15)
           `,
         }}
       >
-        {/* Liquid Specular Light Sheen */}
+        {/* Subtle Pearl / Rose Sheen */}
         <div
-          className="pointer-events-none absolute -top-16 -left-14 w-48 h-48 rounded-full blur-2xl opacity-65"
+          className="pointer-events-none absolute -top-14 -left-12 w-44 h-44 rounded-full blur-2xl opacity-60"
           style={{
             background:
-              "radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.08) 50%, transparent 80%)",
+              "radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(253,164,175,0.2) 50%, transparent 80%)",
           }}
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/25 rounded-[26px]" />
 
         {/* Content Wrapper */}
         <div className="relative z-10">
-          {/* Top Row: Album Cover + Song Meta + iOS AirPlay/Spotify Pill */}
+          {/* Top Row: Album Cover + Song Meta + Pink/White Spotify Pill */}
           <div className="flex items-center gap-3">
-            {/* Square Album Cover */}
-            <div className="relative w-[52px] h-[52px] rounded-[14px] overflow-hidden shrink-0 shadow-[0_6px_14px_rgba(0,0,0,0.4)] border border-white/25">
+            {/* Square Album Cover with soft rounded corners */}
+            <div className="relative w-[50px] h-[50px] rounded-[13px] overflow-hidden shrink-0 shadow-[0_4px_12px_rgba(244,114,182,0.25)] border border-white/90">
               <Image
                 src="/images/salvia-palth.jpg"
-                alt="(dream) by Salvia Palth ‧ 2013"
-                width={52}
-                height={52}
+                alt="(dream) by Salvia Palth · 2013"
+                width={50}
+                height={50}
                 className={`w-full h-full object-cover transition-transform duration-700 ${
                   isPlaying ? "scale-105" : "scale-100"
                 }`}
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/25" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/30" />
             </div>
 
-            {/* Song Meta */}
+            {/* Song Meta with crisp feminine readability */}
             <div className="flex-1 min-w-0 pr-1">
-              <h4 className="text-white font-bold text-[15px] tracking-tight truncate drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+              <h4 className="text-[#3b1c2b] font-bold text-[14.5px] tracking-tight truncate">
                 (dream)
               </h4>
-              <p className="text-white/80 text-[12px] font-medium tracking-tight truncate drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+              <p className="text-[#7e4e63] text-[11.5px] font-medium tracking-tight truncate">
                 Song by Salvia Palth · 2013
               </p>
             </div>
 
-            {/* Right: iOS Airplay / Spotify Status Pill */}
+            {/* Right: Soft Pink / Rose Spotify Pill */}
             <div className="flex items-center gap-1.5 shrink-0">
               <a
                 href="https://open.spotify.com/search/salvia%20palth%20dream"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Listen on Spotify"
-                className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/15 hover:bg-white/25 border border-white/30 backdrop-blur-md text-white transition-all transform hover:scale-105 shadow-sm"
+                className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/80 hover:bg-white border border-pink-200/70 backdrop-blur-md text-[#be185d] transition-all transform hover:scale-105 shadow-[0_2px_8px_rgba(244,114,182,0.15)]"
               >
-                {/* Mini iOS Waveform Equalizer */}
+                {/* Mini Waveform Equalizer in Rose Pink */}
                 <div className="flex items-end gap-[2px] h-3">
                   <span
-                    className={`w-[2.5px] bg-[#1DB954] rounded-full transition-all duration-200 ${
+                    className={`w-[2px] bg-[#f43f5e] rounded-full transition-all duration-200 ${
                       isPlaying ? "animate-pulse h-2.5" : "h-1"
                     }`}
                   />
                   <span
-                    className={`w-[2.5px] bg-[#1DB954] rounded-full transition-all duration-200 ${
+                    className={`w-[2px] bg-[#fb7185] rounded-full transition-all duration-200 ${
                       isPlaying ? "animate-pulse h-3" : "h-1.5"
                     }`}
                     style={{ animationDelay: "0.15s" }}
                   />
                   <span
-                    className={`w-[2.5px] bg-[#1DB954] rounded-full transition-all duration-200 ${
+                    className={`w-[2px] bg-[#f43f5e] rounded-full transition-all duration-200 ${
                       isPlaying ? "animate-pulse h-2" : "h-1"
                     }`}
                     style={{ animationDelay: "0.3s" }}
                   />
                 </div>
 
-                {/* Spotify Glyph */}
-                <svg className="w-3.5 h-3.5 fill-[#1DB954]" viewBox="0 0 24 24">
+                {/* Spotify Glyph in Soft Rose */}
+                <svg className="w-3.5 h-3.5 fill-[#f43f5e]" viewBox="0 0 24 24">
                   <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.494 17.316c-.215.353-.675.467-1.028.251-2.825-1.728-6.381-2.119-10.57-1.161-.403.092-.806-.157-.899-.56-.093-.404.157-.806.56-.899 4.588-1.047 8.524-.601 11.686 1.34.354.217.467.676.251 1.029zm1.467-3.26c-.27.441-.849.58-1.29.31-3.235-1.988-8.167-2.564-11.993-1.402-.497.151-1.023-.131-1.174-.627-.151-.497.13-1.024.628-1.174 4.372-1.328 9.808-.686 13.519 1.597.44.27.58.85.31 1.296zm.126-3.41c-3.878-2.302-10.279-2.514-13.987-1.388-.596.181-1.229-.158-1.41-.755-.181-.597.158-1.23.755-1.411 4.257-1.292 11.319-1.044 15.787 1.608.536.319.711 1.018.393 1.554-.319.537-1.018.712-1.538.392z" />
                 </svg>
               </a>
             </div>
           </div>
 
-          {/* Middle Row: iOS Scrubber Bar */}
+          {/* Middle Row: Soft Pink Scrubber Bar */}
           <div className="mt-3">
             <div
               onClick={handleSeek}
               className="group/track relative h-5 flex items-center cursor-pointer select-none"
             >
-              <div className="w-full h-1 bg-white/20 group-hover/track:h-1.5 rounded-full overflow-hidden transition-all backdrop-blur-sm">
+              {/* Background Track */}
+              <div className="w-full h-1 bg-pink-200/50 group-hover/track:h-1.5 rounded-full overflow-hidden transition-all backdrop-blur-sm border border-pink-200/30">
                 <div
-                  className="h-full bg-white transition-all duration-150 rounded-full shadow-[0_0_8px_rgba(255,255,255,0.7)]"
+                  className="h-full bg-gradient-to-r from-[#fb7185] via-[#f43f5e] to-[#ec4899] transition-all duration-150 rounded-full shadow-[0_0_8px_rgba(244,63,94,0.35)]"
                   style={{ width: `${progressPct}%` }}
                 />
               </div>
 
-              {/* iOS Scrubber Head */}
+              {/* Scrubber Head (Glossy White Capsule Dot with Soft Pink Rim) */}
               <div
-                className="absolute w-3 h-3 bg-white rounded-full shadow-[0_2px_6px_rgba(0,0,0,0.5)] transition-all duration-150 transform -translate-x-1/2 pointer-events-none group-hover/track:scale-125"
+                className="absolute w-3 h-3 bg-white rounded-full border border-pink-300 shadow-[0_2px_6px_rgba(244,63,94,0.3)] transition-all duration-150 transform -translate-x-1/2 pointer-events-none group-hover/track:scale-125"
                 style={{ left: `${progressPct}%` }}
               />
             </div>
 
             {/* Time Indicators */}
-            <div className="flex items-center justify-between -mt-1 px-0.5 text-[10.5px] font-medium text-white/60 tracking-tight">
+            <div className="flex items-center justify-between -mt-1 px-0.5 text-[10px] font-semibold text-[#8a5d71] tracking-tight">
               <span>{formatTime(currentTime)}</span>
               <span>-{formatTime(remainingSecs)}</span>
             </div>
           </div>
 
-          {/* Bottom Row: iOS Media Controls & Volume at 15% */}
+          {/* Bottom Row: Media Controls & 15% Volume */}
           <div className="mt-1 flex items-center justify-between px-1">
             {/* Left Control: Volume Slider set at 15% */}
             <div className="flex items-center gap-1.5">
               <button
                 type="button"
                 onClick={toggleMute}
-                className="p-1 text-white/70 hover:text-white transition-colors cursor-pointer rounded-full hover:bg-white/10 active:scale-95"
+                className="p-1 text-[#7e4e63] hover:text-[#be185d] transition-colors cursor-pointer rounded-full hover:bg-pink-100/50 active:scale-95"
                 title={isMuted ? "Unmute" : `Volume: ${Math.round(volume * 100)}%`}
               >
                 {isMuted || volume === 0 ? (
-                  <VolumeX size={15} className="text-white/60" />
+                  <VolumeX size={15} className="text-[#a07487]" />
                 ) : (
-                  <Volume2 size={15} className="text-[#1DB954] drop-shadow-[0_0_6px_rgba(29,185,84,0.6)]" />
+                  <Volume2 size={15} className="text-[#f43f5e] drop-shadow-[0_0_4px_rgba(244,63,94,0.4)]" />
                 )}
               </button>
 
-              {/* Interactive iOS mini volume bar showing 15% */}
+              {/* Interactive mini volume bar showing 15% */}
               <div
                 onClick={handleVolumeSeek}
-                className="w-12 h-1.5 bg-white/20 hover:h-2 rounded-full overflow-hidden cursor-pointer relative transition-all group/vol"
+                className="w-12 h-1.5 bg-pink-200/50 hover:h-2 rounded-full overflow-hidden cursor-pointer relative transition-all group/vol border border-pink-200/40"
                 title={`Volume: ${Math.round(volume * 100)}% (Click to adjust)`}
               >
                 <div
-                  className="h-full bg-white/80 group-hover/vol:bg-[#1DB954] rounded-full transition-all duration-150"
+                  className="h-full bg-gradient-to-r from-[#fb7185] to-[#f43f5e] rounded-full transition-all duration-150"
                   style={{ width: `${isMuted ? 0 : volume * 100}%` }}
                 />
               </div>
-              <span className="text-[9.5px] font-mono text-white/65 font-medium select-none">
+              <span className="text-[9.5px] font-mono text-[#7e4e63] font-semibold select-none">
                 {isMuted ? "0%" : `${Math.round(volume * 100)}%`}
               </span>
             </div>
@@ -318,39 +317,40 @@ export const HubMusicPlayer: React.FC = () => {
               <button
                 type="button"
                 onClick={handleSkipBack}
-                className="text-white/80 hover:text-white transition-transform active:scale-90 p-1 cursor-pointer"
+                className="text-[#7e4e63] hover:text-[#be185d] transition-transform active:scale-90 p-1 cursor-pointer"
                 title="Rewind 10 seconds"
               >
-                <SkipBack size={18} fill="currentColor" />
+                <SkipBack size={17} fill="currentColor" />
               </button>
 
+              {/* Play / Pause - Glossy White & Pink Capsule */}
               <button
                 type="button"
                 onClick={togglePlay}
-                className="w-9 h-9 rounded-full bg-white text-black flex items-center justify-center shadow-[0_4px_16px_rgba(255,255,255,0.4)] transition-all duration-200 hover:scale-108 active:scale-95 cursor-pointer"
+                className="w-9 h-9 rounded-full bg-white text-[#f43f5e] border border-pink-200/80 flex items-center justify-center shadow-[0_4px_14px_rgba(244,114,182,0.35)] transition-all duration-200 hover:scale-108 active:scale-95 cursor-pointer"
                 title={isPlaying ? "Pause" : "Play"}
               >
                 {isPlaying ? (
-                  <Pause size={16} fill="currentColor" strokeWidth={0} />
+                  <Pause size={15} fill="currentColor" strokeWidth={0} />
                 ) : (
-                  <Play size={16} fill="currentColor" strokeWidth={0} className="ml-0.5" />
+                  <Play size={15} fill="currentColor" strokeWidth={0} className="ml-0.5" />
                 )}
               </button>
 
               <button
                 type="button"
                 onClick={handleSkipForward}
-                className="text-white/80 hover:text-white transition-transform active:scale-90 p-1 cursor-pointer"
+                className="text-[#7e4e63] hover:text-[#be185d] transition-transform active:scale-90 p-1 cursor-pointer"
                 title="Forward 10 seconds"
               >
-                <SkipForward size={18} fill="currentColor" />
+                <SkipForward size={17} fill="currentColor" />
               </button>
             </div>
 
             {/* Right: AirPlay icon */}
             <div
-              className="p-1.5 text-white/70 hover:text-white transition-colors cursor-pointer rounded-full hover:bg-white/10 active:scale-95"
-              title="iOS AirPlay Output"
+              className="p-1.5 text-[#7e4e63] hover:text-[#be185d] transition-colors cursor-pointer rounded-full hover:bg-pink-100/50 active:scale-95"
+              title="AirPlay Output"
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1" />

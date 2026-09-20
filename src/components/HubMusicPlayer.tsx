@@ -12,9 +12,9 @@ export const HubMusicPlayer: React.FC = () => {
   const [totalDuration, setTotalDuration] = useState(30);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Initialize and handle real soundtrack of (dream) by Salvia Palth (2013)
+  // Initialize and handle soundtrack of Not You Too (feat. Chris Brown) by Drake, Chris Brown
   useEffect(() => {
-    const audio = new Audio("/audio/salvia-palth-dream.m4a");
+    const audio = new Audio("/audio/not-you-too.mp4");
     audio.loop = true;
     audio.muted = isMuted;
     audio.volume = 0.15; // Set initial volume to 15%
@@ -192,8 +192,8 @@ export const HubMusicPlayer: React.FC = () => {
             {/* Square Album Cover with soft rounded corners */}
             <div className="relative w-[50px] h-[50px] rounded-[13px] overflow-hidden shrink-0 shadow-[0_4px_12px_rgba(244,114,182,0.25)] border border-white/90">
               <Image
-                src="/images/salvia-palth.jpg"
-                alt="(dream) by Salvia Palth · 2013"
+                src="/images/not-you-too-cover.png"
+                alt="Not You Too (feat. Chris Brown) - Drake, Chris Brown"
                 width={50}
                 height={50}
                 className={`w-full h-full object-cover transition-transform duration-700 ${
@@ -205,18 +205,18 @@ export const HubMusicPlayer: React.FC = () => {
 
             {/* Song Meta with crisp feminine readability */}
             <div className="flex-1 min-w-0 pr-1">
-              <h4 className="text-[#3b1c2b] font-bold text-[14.5px] tracking-tight truncate">
-                (dream)
+              <h4 className="text-[#3b1c2b] font-bold text-[14px] tracking-tight truncate" title="Not You Too (feat. Chris Brown)">
+                Not You Too (feat. Chris Brown)
               </h4>
-              <p className="text-[#7e4e63] text-[11.5px] font-medium tracking-tight truncate">
-                Song by Salvia Palth · 2013
+              <p className="text-[#7e4e63] text-[11.5px] font-medium tracking-tight truncate" title="Drake, Chris Brown">
+                Drake, Chris Brown
               </p>
             </div>
 
             {/* Right: Soft Pink / Rose Spotify Pill */}
             <div className="flex items-center gap-1.5 shrink-0">
               <a
-                href="https://open.spotify.com/search/salvia%20palth%20dream"
+                href="https://open.spotify.com/search/not%20you%20too%20drake%20chris%20brown"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Listen on Spotify"
